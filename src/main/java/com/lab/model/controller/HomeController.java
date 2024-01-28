@@ -28,12 +28,17 @@ import java.util.List;
 public class HomeController {
     UserRepository userRepository;
     Logger logger = LoggerFactory.getLogger(AdminController.class);
+
+
     private UserService userService;
+
     private DaysOffService daysOffService;
 
     @Autowired
-    public HomeController(UserRepository userRepository) {
+    public HomeController(UserRepository userRepository, UserService userService, DaysOffService daysOffService) {
         this.userRepository = userRepository;
+        this.userService = userService;
+        this.daysOffService = daysOffService;
     }
 
     @GetMapping()
@@ -63,7 +68,8 @@ public class HomeController {
         return "home";
     }
 
-    @PatchMapping("/daysOff") /* Partial modification */
+
+    @PatchMapping("/daysOff")
     public String updateDaysOff(@RequestParam("userId") Long userId, Model model, @RequestParam("roles") Long ... roles) {
         logger.info("update daysOff called");
         UserEntity user = userService.getCurrentUser();

@@ -22,18 +22,6 @@
     </div>
 </aside>
 
-<form th:action="@{/daysOff}" method="post" th:object="${daysOff}">
-    <label for="datepicker1" class="text-gray-700">Select Start Date:</label>
-    <input type="date" id="datepicker1" name="startDate" th:field="${daysOff.startDate}" class="ml-2 p-2 border border-gray-300 rounded-md">
-
-    <label for="datepicker2" class="text-gray-700">Select End Date:</label>
-    <input type="date" id="datepicker2" name="endDate" th:field="${daysOff.endDate}" class="ml-2 p-2 border border-gray-300 rounded-md">
-
-    <label for="textbox" class="text-gray-700">Additional Information:</label>
-    <input type="text" id="textbox" name="message" th:field="${daysOff.message}" class="ml-2 p-2 border border-gray-300 rounded-md">
-
-    <button type="submit">Save Holiday</button>
-</form>
 
 
 
