@@ -65,19 +65,13 @@ public class HomeController {
         DaysOffEntity daysOff = new DaysOffEntity();
         model.addAttribute("daysOff",daysOff);
 
+        UserEntity user = userService.getCurrentUser();
+        List<DaysOffEntity> usersDaysOff = daysOffService.findAllByUser(user);
+        model.addAttribute("usersDaysOff",usersDaysOff);
+
         return "home";
     }
 
-
-    @GetMapping()//vedem
-    public String showUsersDaysOff(Model model){
-
-        UserEntity user = userService.getCurrentUser();
-        List<DaysOffEntity> daysOff = daysOffService.findAllByUser(user);
-
-
-        return "/myCalendar"; // vedem daca ramane asta
-    }
 
 
     @PostMapping()
