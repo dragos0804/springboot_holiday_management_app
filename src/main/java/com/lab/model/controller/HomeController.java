@@ -72,6 +72,16 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/calendar")
+    public String seeEmployeeHoliday(Model model, @ModelAttribute("daysOff") DaysOffEntity daysOff) {
+
+        logger.info("seeEmployeeHoliday called");
+        UserEntity user = userService.getCurrentUser();
+        List<DaysOffEntity> usersDaysOff = daysOffService.findAllByUser(user);
+        model.addAttribute("usersDaysOff",usersDaysOff);
+
+        return "calendar";
+    }
 
 
     @PostMapping()
