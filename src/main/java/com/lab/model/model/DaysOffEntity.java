@@ -9,7 +9,7 @@ import java.time.LocalDate;
  */
 @Entity
 @Table(name="days_off")
-public class DaysOff {
+public class DaysOffEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,10 @@ public class DaysOff {
 
     @Column(name="end_date")
     private LocalDate endDate;
+
+    public void setApproved(Boolean approved) {
+        isApproved = approved;
+    }
 
     @Column(name="is_approved")
     private Boolean isApproved;
