@@ -1,6 +1,8 @@
 package com.lab.model.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
@@ -9,6 +11,8 @@ import java.time.LocalDate;
  */
 @Entity
 @Table(name="days_off")
+@Getter
+@Setter
 public class DaysOffEntity {
 
     @Id

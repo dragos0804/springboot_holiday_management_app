@@ -14,10 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -65,22 +62,33 @@ public class HomeController {
 
         model.addAttribute("menuItems", menu);
 
+        DaysOffEntity daysOff = new DaysOffEntity();
+        model.addAttribute("daysOff",daysOff);
+
         return "home";
     }
 
 
-    @PatchMapping("/daysOff")
-    public String updateDaysOff(@RequestParam("userId") Long userId, Model model, @RequestParam("roles") Long ... roles) {
+    @GetMapping()//vedem
+    public String showUsersDaysOff(Model model){
+
+        UserEntity user = userService.getCurrentUser();
+        List<DaysOffEntity> daysOff = daysOffService.findAllByUser(user);
+
+
+        return "/myCalendar"; // vedem daca ramane asta
+    }
+
+
+    @PostMapping()
+    public String updateDaysOff(Model model, @ModelAttribute("daysOff") DaysOffEntity daysOff) {
         logger.info("update daysOff called");
         UserEntity user = userService.getCurrentUser();
-
-        DaysOffEntity daysOff = new DaysOffEntity();
-        model.addAttribute(daysOff);
-
+        daysOff.setUser(user);
         daysOff.setApproved(false);
 
         daysOffService.update(daysOff);
 
-        return "redirect:/home/daysOff";
+        return "redirect:/home";  //o sa il trimitem sa asi vada concediul
     }
 }

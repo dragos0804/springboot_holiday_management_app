@@ -99,8 +99,11 @@ public class UserService implements UserDetailsService {
 
     public UserEntity getCurrentUser() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication != null && authentication.getPrincipal() instanceof UserEntity) {
-            return (UserEntity) authentication.getPrincipal();
+        if (authentication != null) {
+            Optional<UserEntity> optUser = userRepository.findByEmail(authentication.getName());
+
+            if(optUser.isPresent())
+                return optUser.get();
         }
         return null;
     }
