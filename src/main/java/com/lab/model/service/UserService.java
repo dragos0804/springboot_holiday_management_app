@@ -96,4 +96,15 @@ public class UserService implements UserDetailsService {
     public UserEntity findById(Long userId) {
         return userRepository.findById(userId).get();
     }
+
+    public UserEntity getCurrentUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null) {
+            Optional<UserEntity> optUser = userRepository.findByEmail(authentication.getName());
+
+            if(optUser.isPresent())
+                return optUser.get();
+        }
+        return null;
+    }
 }

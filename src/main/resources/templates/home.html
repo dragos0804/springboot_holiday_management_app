@@ -15,11 +15,43 @@
 
 <div class="flex-1 p-4 ml-32">
     <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-        <div th:replace="fragments/componenets::calendar">
+        <form th:action="@{/home}" method="post" th:object="${daysOff}">
+            <label for="datepicker1" class="text-gray-700">Select Start Date:</label>
+            <input type="date" id="datepicker1" name="startDate" th:field="${daysOff.startDate}" class="ml-2 p-2 border border-gray-300 rounded-md">
 
-        </div>
+            <label for="datepicker2" class="text-gray-700">Select End Date:</label>
+            <input type="date" id="datepicker2" name="endDate" th:field="${daysOff.endDate}" class="ml-2 p-2 border border-gray-300 rounded-md">
+
+            <label for="textbox" class="text-gray-700">Additional Information:</label>
+            <input type="text" id="textbox" name="message" th:field="${daysOff.message}" class="ml-2 p-2 border border-gray-300 rounded-md">
+
+            <button type="submit">Save Holiday</button>
+        </form>
+    </div>
+
+    <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+        <table>
+            <thead>
+            <tr>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Is approved</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="dayOff : ${usersDaysOff}">
+                <input type="hidden" name="userId" th:value="${dayOff.id}" />
+                <td th:text="${dayOff.startDate}"></td>
+                <td th:text="${dayOff.endDate}"></td>
+                <td th:text="${dayOff.isApproved}"></td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </div>
+
+
+
 
 
 

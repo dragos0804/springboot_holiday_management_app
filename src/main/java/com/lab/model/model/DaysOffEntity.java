@@ -1,6 +1,8 @@
 package com.lab.model.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 
@@ -9,7 +11,9 @@ import java.time.LocalDate;
  */
 @Entity
 @Table(name="days_off")
-public class DaysOff {
+@Getter
+@Setter
+public class DaysOffEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +24,10 @@ public class DaysOff {
 
     @Column(name="end_date")
     private LocalDate endDate;
+
+    public void setApproved(Boolean approved) {
+        isApproved = approved;
+    }
 
     @Column(name="is_approved")
     private Boolean isApproved;
