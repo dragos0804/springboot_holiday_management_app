@@ -40,7 +40,13 @@ public class UserEntity {
     private List<RoleEntity> roles = new ArrayList<>();
 
     @ManyToOne
-    private UserEntity user;
+    private UserEntity manager;
+
+    @OneToMany(mappedBy = "manager", fetch = FetchType.EAGER) //owner-ul relatiei
+    private List<UserEntity> employees;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    private List<DaysOffEntity> daysOffPerUser;
 
     public void addRole(RoleEntity role) {
         roles.add(role);
