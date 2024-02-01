@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * JPA Entities
@@ -24,10 +25,6 @@ public class DaysOffEntity {
 
     @Column(name="end_date")
     private LocalDate endDate;
-
-    public void setApproved(Boolean approved) {
-        isApproved = approved;
-    }
 
     @Column(name="is_approved")
     private Boolean isApproved;

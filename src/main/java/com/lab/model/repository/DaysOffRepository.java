@@ -13,4 +13,5 @@ import java.util.Optional;
 public interface DaysOffRepository extends JpaRepository<DaysOffEntity, Long> {
 
     Optional<List<DaysOffEntity>> findAllByUser(UserEntity user);
+    Optional<DaysOffEntity> findById(Long id);
 }

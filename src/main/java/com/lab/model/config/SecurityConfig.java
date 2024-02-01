@@ -31,6 +31,7 @@ public class SecurityConfig {
                         .requestMatchers("/images/public/**").permitAll()
                         .requestMatchers("/home")
                         .authenticated()
+                        .requestMatchers("/approve", "/approve/**").hasAuthority("APPROVE_DAYS_OFF_REQUEST")
                 )
 
                 /*Change of the login page */

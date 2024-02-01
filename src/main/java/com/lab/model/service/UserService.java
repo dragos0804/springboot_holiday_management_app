@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -104,6 +103,14 @@ public class UserService implements UserDetailsService {
 
             if(optUser.isPresent())
                 return optUser.get();
+        }
+        return null;
+    }
+
+    public List<UserEntity> getAllUsersUnderSameManager() {
+        UserEntity manager = getCurrentUser();
+        if(manager != null) {
+            return manager.getEmployees();
         }
         return null;
     }
