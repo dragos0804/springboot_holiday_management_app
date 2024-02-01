@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>Approve</title>
+</head>
+<body class="flex">
+
+<div th:replace="fragments/componenets::top-bar('Calendar')"></div>
+<div th:replace="fragments/componenets::side-menu(menuItems=${menuItems})"></div>
+
+<div class="flex-1 p-4 ml-32">
+
+  <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
+    <table>
+      <thead>
+        <tr>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <form method="post">
+          <tr th:each="allDaysOffForAllUser : ${allDaysOffForAllUsers}">
+            <td th:text="${allDaysOffForAllUser.startDate}"></td>
+            <td th:text="${allDaysOffForAllUser.endDate}"></td>
+            <td>
+              <button type="submit" th:name="'actionAccept'" th:value="'accept-'+${allDaysOffForAllUser.id}" class="btn btn-info">Accept</button>
+              <button type="submit" th:name="'actionDecline'" th:value="'decline-'+${allDaysOffForAllUser.id}" class="btn btn-info">Decline</button>
+            </td>
+          </tr>
+        </form>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

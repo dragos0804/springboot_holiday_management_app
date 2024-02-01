@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +26,6 @@ import java.util.List;
 public class HomeController {
     UserRepository userRepository;
     Logger logger = LoggerFactory.getLogger(AdminController.class);
-
-
     private UserService userService;
 
     private DaysOffService daysOffService;
@@ -51,15 +50,17 @@ public class HomeController {
         home.setUrl("/home");
         menu.add(home);
 
-        MenuItem calendar = new MenuItem();
-        calendar.setName("Calendar");
-        calendar.setUrl("/calendar");
-        Icon rolesIcon = Icon.CALENDAR;
-        rolesIcon.setColor(Icon.IconColor.INDIGO);
+        if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("APPROVE_DAYS_OFF_REQUEST"))) {
+            MenuItem calendar = new MenuItem();
 
-        calendar.setIcon(rolesIcon);
-        menu.add(calendar);
+            calendar.setName("Approve");
+            calendar.setUrl("/approve");
+            Icon rolesIcon = Icon.CALENDAR;
+            rolesIcon.setColor(Icon.IconColor.INDIGO);
 
+            calendar.setIcon(rolesIcon);
+            menu.add(calendar);
+        }
         model.addAttribute("menuItems", menu);
 
         DaysOffEntity daysOff = new DaysOffEntity();
@@ -71,8 +72,7 @@ public class HomeController {
 
         return "home";
     }
-
-    @GetMapping("/calendar")
+/*    @GetMapping("/calendar")
     public String seeEmployeeHoliday(Model model, @ModelAttribute("daysOff") DaysOffEntity daysOff) {
 
         logger.info("seeEmployeeHoliday called");
@@ -81,9 +81,7 @@ public class HomeController {
         model.addAttribute("usersDaysOff",usersDaysOff);
 
         return "calendar";
-    }
-
-
+    }*/
     @PostMapping()
     public String updateDaysOff(Model model, @ModelAttribute("daysOff") DaysOffEntity daysOff) {
         logger.info("update daysOff called");
