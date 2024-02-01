@@ -26,7 +26,14 @@
             <input type="text" id="textbox" name="message" th:field="${daysOff.message}" class="ml-2 p-2 border border-gray-300 rounded-md">
 
             <button type="submit">Save Holiday</button>
+
         </form>
+
+        <!-- Error message display -->
+        <div th:if="${dateValidationError}">
+            <span th:text="${dateValidationError}" class="error-message" style="color: red;"></span>
+        </div>
+
     </div>
 
     <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">

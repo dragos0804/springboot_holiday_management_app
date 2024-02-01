@@ -5,6 +5,7 @@ import com.lab.model.model.RoleEntity;
 import com.lab.model.model.UserEntity;
 import com.lab.model.repository.UserRepository;
 import com.lab.model.service.DaysOffService;
+import com.lab.model.service.DaysOffValidatorService;
 import com.lab.model.service.UserService;
 import com.lab.model.util.Icon;
 import com.lab.model.util.MenuItem;
@@ -30,11 +31,15 @@ public class HomeController {
 
     private DaysOffService daysOffService;
 
+    private DaysOffValidatorService daysOffValidatorService;
+
+
     @Autowired
-    public HomeController(UserRepository userRepository, UserService userService, DaysOffService daysOffService) {
+    public HomeController(UserRepository userRepository, UserService userService, DaysOffService daysOffService, DaysOffValidatorService daysOffValidatorService) {
         this.userRepository = userRepository;
         this.userService = userService;
         this.daysOffService = daysOffService;
+        this.daysOffValidatorService = daysOffValidatorService;
     }
 
     @GetMapping()
@@ -85,12 +90,20 @@ public class HomeController {
     @PostMapping()
     public String updateDaysOff(Model model, @ModelAttribute("daysOff") DaysOffEntity daysOff) {
         logger.info("update daysOff called");
+
+        if (!daysOffValidatorService.isValid(daysOff)) {
+            model.addAttribute("dateValidationError", "Start date must be on or before end date.");
+            model.addAttribute("daysOff", daysOff); // Add this line to return the form with user data
+            return "/home"; // Redirect back to the form with an error message
+        }
+
         UserEntity user = userService.getCurrentUser();
         daysOff.setUser(user);
         daysOff.setIsApproved(false);
 
         daysOffService.update(daysOff);
 
-        return "redirect:/home";  //o sa il trimitem sa asi vada concediul
+        return "redirect:/home"; // Redirect after successful update
     }
+
 }
