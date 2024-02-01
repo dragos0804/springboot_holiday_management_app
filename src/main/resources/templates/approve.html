@@ -10,7 +10,7 @@
 </head>
 <body class="flex">
 
-<div th:replace="fragments/componenets::top-bar('Calendar')"></div>
+<div th:replace="fragments/componenets::top-bar('Approve')"></div>
 <div th:replace="fragments/componenets::side-menu(menuItems=${menuItems})"></div>
 
 <div class="flex-1 p-4 ml-32">
@@ -19,16 +19,22 @@
     <table>
       <thead>
         <tr>
+          <th>Email</th>
+          <th>Message</th>
           <th>Start Date</th>
           <th>End Date</th>
+          <th>Current Status</th>
           <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <form method="post">
+        <form th:action="@{/approve}" method="post">
           <tr th:each="allDaysOffForAllUser : ${allDaysOffForAllUsers}">
+            <td th:text="${allDaysOffForAllUser.getUser().getEmail()}"></td>
+            <td th:text="${allDaysOffForAllUser.message}"></td>
             <td th:text="${allDaysOffForAllUser.startDate}"></td>
             <td th:text="${allDaysOffForAllUser.endDate}"></td>
+            <td th:text="${allDaysOffForAllUser.isApproved}"></td>
             <td>
               <button type="submit" th:name="'actionAccept'" th:value="'accept-'+${allDaysOffForAllUser.id}" class="btn btn-info">Accept</button>
               <button type="submit" th:name="'actionDecline'" th:value="'decline-'+${allDaysOffForAllUser.id}" class="btn btn-info">Decline</button>

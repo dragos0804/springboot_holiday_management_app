@@ -69,7 +69,10 @@ public class UpdateController {
     }
 
     @PostMapping()
-    public String acceptEmployeeHoliday(Model model, @ModelAttribute("daysOff") DaysOffEntity daysOff, @RequestParam("actionAccept") String acceptDoer, @RequestParam("actionDecline") String declineDoer) {
+    public String acceptEmployeeHoliday(Model model,
+                                        @ModelAttribute("daysOff") DaysOffEntity daysOff,
+                                        @RequestParam(value = "actionAccept", required = false) String acceptDoer,
+                                        @RequestParam(value = "actionDecline", required = false) String declineDoer) {
 
         logger.info("acceptEmployeeHoliday called");
 
@@ -91,12 +94,12 @@ public class UpdateController {
         if(daysOffId != -1L)
             daysOffEntityLocal = daysOffService.findById(daysOffId);
 
-        boolean isAcceptedBool = isAccepted == "true";
+        boolean isAcceptedBool = isAccepted.equals("accept");
         if(daysOffEntityLocal != null) {
-            daysOffEntityLocal.setApproved(isAcceptedBool);
+            daysOffEntityLocal.setIsApproved(isAcceptedBool);
             daysOffService.update(daysOffEntityLocal);
         }
 
-        return "approve";
+        return "redirect:/approve";
     }
 }

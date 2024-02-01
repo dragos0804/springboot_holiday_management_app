@@ -26,10 +26,6 @@ public class DaysOffEntity {
     @Column(name="end_date")
     private LocalDate endDate;
 
-    public void setApproved(Boolean approved) {
-        isApproved = approved;
-    }
-
     @Column(name="is_approved")
     private Boolean isApproved;
 

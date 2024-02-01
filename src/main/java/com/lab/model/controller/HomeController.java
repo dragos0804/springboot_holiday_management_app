@@ -51,15 +51,15 @@ public class HomeController {
         menu.add(home);
 
         if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("APPROVE_DAYS_OFF_REQUEST"))) {
-            MenuItem calendar = new MenuItem();
+            MenuItem approve = new MenuItem();
 
-            calendar.setName("Approve");
-            calendar.setUrl("/approve");
+            approve.setName("Approve");
+            approve.setUrl("/approve");
             Icon rolesIcon = Icon.CALENDAR;
             rolesIcon.setColor(Icon.IconColor.INDIGO);
 
-            calendar.setIcon(rolesIcon);
-            menu.add(calendar);
+            approve.setIcon(rolesIcon);
+            menu.add(approve);
         }
         model.addAttribute("menuItems", menu);
 
@@ -87,7 +87,7 @@ public class HomeController {
         logger.info("update daysOff called");
         UserEntity user = userService.getCurrentUser();
         daysOff.setUser(user);
-        daysOff.setApproved(false);
+        daysOff.setIsApproved(false);
 
         daysOffService.update(daysOff);
 
