@@ -99,9 +99,8 @@ public class HomeController {
         logger.info("update daysOff called");
 
         if (!daysOffValidatorService.isValid(daysOff)) {
-            model.addAttribute("dateValidationError", "Start date must be on or before end date.");
-            model.addAttribute("daysOff", daysOff); // Add this line to return the form with user data
-            return "/home"; // Redirect back to the form with an error message
+            // Display JavaScript alert for invalid date
+            return "redirect:/home?dateValidationError=true";
         }
 
         UserEntity user = userService.getCurrentUser();
@@ -112,5 +111,6 @@ public class HomeController {
 
         return "redirect:/home"; // Redirect after successful update
     }
+
 
 }
