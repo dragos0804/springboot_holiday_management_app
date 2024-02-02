@@ -14,7 +14,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/setVacancy")
@@ -59,20 +61,32 @@ public class SetVacancyDaysController {
 
         model.addAttribute("menuItems", menu);
 
+
         List<UserEntity> employeesUnderThisManager = userService.getAllUsersUnderSameManager();
+        employeesUnderThisManager.sort(Comparator.comparing(UserEntity::getId));
         model.addAttribute("employeesUnderThisManager", employeesUnderThisManager);
 
+        model.addAttribute("userfreeDays");
 
         return "setVacancy";
     }
 
     @PostMapping()
-    public String acceptEmployeeHoliday(Model model,@RequestParam("employeeId") Long employeeId,
-                                        @RequestParam("freeDays") int freeDays)
-    {
-        UserEntity user = userService.getUserById(employeeId);
-        user.setNrOfDaysOff(freeDays);
-        userService.update(user);
+    public String SetNrOfDays(Model model,
+                              @RequestParam Map<String, String> params) {
+
+        for (Map.Entry<String, String> entry : params.entrySet()) {
+            if (entry.getKey().startsWith("submitBtn_")) {
+                Long employeeId = Long.parseLong(entry.getKey().replace("submitBtn_", ""));
+                String freeDaysParam = "freeDays_" + employeeId;
+
+                // Use the employeeId and freeDaysParam to update the corresponding user with the given freeDays
+                UserEntity user = userService.getUserById(employeeId);
+                Integer freeDays = Integer.parseInt(params.get(freeDaysParam));
+                user.setNrOfDaysOff(freeDays);
+                userService.update(user);
+            }
+        }
 
         return "redirect:/setVacancy";
     }

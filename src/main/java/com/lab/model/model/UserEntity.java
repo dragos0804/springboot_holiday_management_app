@@ -10,7 +10,7 @@ import java.util.List;
 @Getter @Setter
 @Entity
 @Table(name="app_user")
-public class UserEntity {
+public class UserEntity implements Comparable<UserEntity> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -54,5 +54,10 @@ public class UserEntity {
 
     public void addRole(RoleEntity role) {
         roles.add(role);
+    }
+
+    @Override
+    public int compareTo(UserEntity o) {
+        return this.getId().compareTo(o.getId());
     }
 }

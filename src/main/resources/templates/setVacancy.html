@@ -14,34 +14,34 @@
 <div th:replace="fragments/componenets::side-menu(menuItems=${menuItems})"></div>
 
 <div class="flex-1 p-4 ml-32">
-
   <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-    <table>
-      <thead>
-      <tr>
-        <th>Email</th>
-        <th>Current Number of Free Days</th>
-        <th>Action</th>
-      </tr>
-      </thead>
-      <tbody>
-      <form th:action="@{/setVacancy}" method="post">
-        <tr th:each="employee : ${employeesUnderThisManager}">
+    <form th:action="@{/setVacancy}" method="post">
+      <table>
+        <thead>
+        <tr>
+          <th>Email</th>
+          <th>Current Number of Free Days</th>
+          <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee, rowStat : ${employeesUnderThisManager}">
           <td th:text="${employee.getEmail()}"></td>
           <td th:text="${employee.getNrOfDaysOff()}"></td>
           <td>
-            <input type="number" name="freeDays" th:value="${employee.nrOfDaysOff}" required>
-            <input type="hidden" name="employeeId" th:value="${employee.id}">
+            <input type="number" th:name="'freeDays_' + ${employee.id}" th:value="${employee.getNrOfDaysOff()}" required>
+            <input type="hidden" th:name="actionChangeNr" th:value="${employee.id}">
           </td>
           <td>
-            <button type="submit">Submit</button>
+            <button type="submit" th:name="'submitBtn_' + ${employee.id}" class="btn-class">Submit</button>
           </td>
         </tr>
-      </form>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </form>
   </div>
 </div>
+
 
 </body>
 </html>
