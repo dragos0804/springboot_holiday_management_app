@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
@@ -102,6 +103,7 @@ public class AdminController {
         menu.add(changeBoss);
 
         model.addAttribute("menuItems", menu);
+        //employees.sort(Comparator.comparing(UserEntity::getId));
         model.addAttribute("employees", employees);
         model.addAttribute("user", new UserEntity());
         model.addAttribute("currentPage", page);

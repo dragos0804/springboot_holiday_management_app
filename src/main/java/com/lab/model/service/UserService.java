@@ -127,7 +127,7 @@ public class UserService implements UserDetailsService {
     //functie care cauta ca prin useri si vede daca un user mai e manager sau nu inca
     public List<UserEntity> findNonManagerUsers(List<UserEntity> users) {
         return users.stream()
-                .filter(user -> users.stream().noneMatch(otherUser -> otherUser.getManager().getId() != null && otherUser.getManager().getId().equals(user.getId())))
+                .filter(user -> users.stream().noneMatch(otherUser -> otherUser.getManager() != null && otherUser.getManager().equals(user)))
                 .collect(Collectors.toList());
     }
 
