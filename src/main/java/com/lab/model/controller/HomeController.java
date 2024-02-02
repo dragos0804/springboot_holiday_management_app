@@ -66,27 +66,34 @@ public class HomeController {
             approve.setIcon(rolesIcon);
             menu.add(approve);
         }
+
+        if(authentication.getAuthorities().contains(new SimpleGrantedAuthority("SET_VACANCY_DAYS_NUMBER"))) {
+            MenuItem vacancy = new MenuItem();
+
+            vacancy.setName("Vacancy");
+            vacancy.setUrl("/setVacancy");
+            Icon rolesIcon = Icon.DOUBLE_ARROW_RIGHT;
+            rolesIcon.setColor(Icon.IconColor.INDIGO);
+
+            vacancy.setIcon(rolesIcon);
+            menu.add(vacancy);
+        }
+
+
         model.addAttribute("menuItems", menu);
 
         DaysOffEntity daysOff = new DaysOffEntity();
         model.addAttribute("daysOff",daysOff);
 
         UserEntity user = userService.getCurrentUser();
+        model.addAttribute("currentUser", user);
+
         List<DaysOffEntity> usersDaysOff = daysOffService.findAllByUser(user);
         model.addAttribute("usersDaysOff",usersDaysOff);
 
         return "home";
     }
-/*    @GetMapping("/calendar")
-    public String seeEmployeeHoliday(Model model, @ModelAttribute("daysOff") DaysOffEntity daysOff) {
 
-        logger.info("seeEmployeeHoliday called");
-        UserEntity user = userService.getCurrentUser();
-        List<DaysOffEntity> usersDaysOff = daysOffService.findAllByUser(user);
-        model.addAttribute("usersDaysOff",usersDaysOff);
-
-        return "calendar";
-    }*/
     @PostMapping()
     public String updateDaysOff(Model model, @ModelAttribute("daysOff") DaysOffEntity daysOff) {
         logger.info("update daysOff called");
