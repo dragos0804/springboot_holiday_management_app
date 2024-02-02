@@ -34,6 +34,8 @@ public class AdminController {
     @GetMapping()
     //@PreAuthorize("hasAnyRole('MANAGE_ACCOUNTS')")
     public String open(Model model){
+
+
         List<MenuItem> menu = new ArrayList<>();
 
         MenuItem home = new MenuItem();
@@ -54,10 +56,59 @@ public class AdminController {
         roles.setIcon(rolesIcon);
         menu.add(roles);
 
+        MenuItem changeBoss = new MenuItem();
+        changeBoss.setName("Change Boss");
+        changeBoss.setUrl("/admin/change-boss");
+        Icon rolesIcon2 = Icon.ROLE;
+        rolesIcon2.setColor(Icon.IconColor.INDIGO);
+
+        changeBoss.setIcon(rolesIcon);
+        menu.add(changeBoss);
+
         model.addAttribute("menuItems", menu);
         return "admin/dashboard";
     }
+    @GetMapping("/change-boss")
+    public String openChangeBoss(Model model, @RequestParam(defaultValue = "0")int page) {
+        final int PAGE_SIZE = 10; /* At the moment there is no way to change size from GUI, so this is hardcoded */
+        Page<UserEntity> userPage  = userService.findAll(page, PAGE_SIZE);
+        List<UserEntity> employees = userPage.getContent();
+        List<MenuItem> menu = new ArrayList<>();
 
+        MenuItem home = new MenuItem();
+        home.setName("Home");
+        Icon homeIcon = Icon.HOME;
+        homeIcon.setColor(Icon.IconColor.INDIGO);
+
+        home.setIcon(homeIcon);
+        home.setUrl("/admin");
+        menu.add(home);
+
+        MenuItem roles = new MenuItem();
+        roles.setName("Roles");
+        roles.setUrl("/admin/roles");
+        Icon rolesIcon = Icon.ROLE;
+        rolesIcon.setColor(Icon.IconColor.INDIGO);
+
+        roles.setIcon(rolesIcon);
+        menu.add(roles);
+
+        MenuItem changeBoss = new MenuItem();
+        changeBoss.setName("Change Boss");
+        Icon rolesIconForChangeBoss = Icon.ROLE;
+        rolesIconForChangeBoss.setColor(Icon.IconColor.INDIGO);
+
+        changeBoss.setIcon(rolesIconForChangeBoss);
+        menu.add(changeBoss);
+
+        model.addAttribute("menuItems", menu);
+        model.addAttribute("employees", employees);
+        model.addAttribute("user", new UserEntity());
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", userPage.getTotalPages());
+
+        return "admin/change-boss";
+    }
     @GetMapping
     @RequestMapping("/roles")
     public String openRoles(Model model, @RequestParam(defaultValue = "0") int page){
@@ -67,11 +118,11 @@ public class AdminController {
         List<MenuItem> menu = new ArrayList<>();
 
         /* IMPORTANT!
-        *  FontAwesome finally works in the frontend, and I don't know why. Therefore, the below implementation is
-        * not necessary anymore, neither is the one from the menu. I will not refactor the code, both because:
-        *  - I am proud of this mess.
-        *  - It's working now, but maybe it'll stop working again in the future. :)))
-        * */
+         *  FontAwesome finally works in the frontend, and I don't know why. Therefore, the below implementation is
+         * not necessary anymore, neither is the one from the menu. I will not refactor the code, both because:
+         *  - I am proud of this mess.
+         *  - It's working now, but maybe it'll stop working again in the future. :)))
+         * */
         HashMap<String, Icon> icons = new HashMap<>();
         icons.put("ARROW_LEFT", Icon.ARROW_LEFT);
         icons.put("ARROW_RIGHT", Icon.ARROW_RIGHT);
@@ -95,6 +146,15 @@ public class AdminController {
 
         roles.setIcon(rolesIcon);
         menu.add(roles);
+
+        MenuItem changeBoss = new MenuItem();
+        changeBoss.setName("Change Boss");
+        changeBoss.setUrl("/admin/change-boss");
+        Icon rolesIcon2 = Icon.ROLE;
+        rolesIcon2.setColor(Icon.IconColor.INDIGO);
+
+        changeBoss.setIcon(rolesIcon);
+        menu.add(changeBoss);
 
         model.addAttribute("menuItems", menu);
         model.addAttribute("employees", employees);
@@ -120,5 +180,12 @@ public class AdminController {
         }
 
         return "redirect:/admin/roles";
+    }
+    @PatchMapping("/change-boss")
+    public String updateBoss(@RequestParam("userId") Long employeeId, @RequestParam("newManagerId") Long newManagerId, Model model) {
+        // Implement the logic to update the boss for the specified employee
+        // You may use userService or any other service method to update the boss
+        userService.setManager(employeeId, newManagerId);
+        return "redirect:/admin/change-boss";
     }
 }

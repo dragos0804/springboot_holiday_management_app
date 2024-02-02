@@ -1,7 +1,9 @@
 package com.lab.model.repository;
 
 import com.lab.model.model.UserEntity;
+import org.apache.catalina.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.lang.NonNullApi;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,4 +14,6 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
     Optional<UserEntity> findByUsername(String username);
     Optional<UserEntity> findByEmail(String email);
     List<UserEntity> findAllByManagerId(Long user_id);
+    List<UserEntity> findAll();
+
 }
