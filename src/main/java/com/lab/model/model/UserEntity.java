@@ -27,6 +27,10 @@ public class UserEntity {
     @Column(name = "password")
     private String password;
 
+    @Basic
+    @Column(name = "nr_of_days_off")
+    private Integer nrOfDaysOff;
+
     @Transient
     private String repeatPassword;
 

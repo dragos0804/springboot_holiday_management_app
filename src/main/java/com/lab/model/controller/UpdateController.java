@@ -47,20 +47,30 @@ public class UpdateController {
         home.setUrl("/home");
         menu.add(home);
 
-        MenuItem calendar = new MenuItem();
-        calendar.setName("Approve");
-        calendar.setUrl("/approve");
-        Icon rolesIcon = Icon.CALENDAR;
-        rolesIcon.setColor(Icon.IconColor.INDIGO);
+        MenuItem approve = new MenuItem();
+        approve.setName("Approve");
+        approve.setUrl("/approve");
+        Icon approveicon = Icon.CALENDAR;
+        approveicon.setColor(Icon.IconColor.INDIGO);
+        approve.setIcon(approveicon);
+        menu.add(approve);
 
-        calendar.setIcon(rolesIcon);
-        menu.add(calendar);
+
+        MenuItem vacancy = new MenuItem();
+        vacancy.setName("Vacancy");
+        vacancy.setUrl("/setVacancy");
+        Icon vacancyIcon = Icon.DOUBLE_ARROW_RIGHT;
+        vacancyIcon.setColor(Icon.IconColor.INDIGO);
+
+        vacancy.setIcon(vacancyIcon);
+        menu.add(vacancy);
+
+
 
         model.addAttribute("menuItems", menu);
 
 
         List<UserEntity> employees = userService.getAllUsersUnderSameManager();
-        //TODO add only the ones in waiting
         List<DaysOffEntity> allDaysOffForAllUsers = daysOffService.findAllByUsersUnaccepted(employees);
         model.addAttribute("allDaysOffForAllUsers", allDaysOffForAllUsers);
 
@@ -95,9 +105,23 @@ public class UpdateController {
             daysOffEntityLocal = daysOffService.findById(daysOffId);
 
         boolean isAcceptedBool = isAccepted.equals("accept");
+
+        if(isAcceptedBool)
+            logger.info("Accepted");
+        else
+            logger.info("Declined");
+
         if(daysOffEntityLocal != null) {
-            daysOffEntityLocal.setIsApproved(isAcceptedBool);
-            daysOffService.update(daysOffEntityLocal);
+
+            if(isAcceptedBool)
+            {
+                daysOffEntityLocal.setIsApproved(isAcceptedBool);
+                daysOffService.update(daysOffEntityLocal);
+            }
+            else
+            {
+                daysOffService.delete(daysOffEntityLocal);
+            }
         }
 
         return "redirect:/approve";

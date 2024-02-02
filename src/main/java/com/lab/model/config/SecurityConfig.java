@@ -32,6 +32,7 @@ public class SecurityConfig {
                         .requestMatchers("/home")
                         .authenticated()
                         .requestMatchers("/approve", "/approve/**").hasAuthority("APPROVE_DAYS_OFF_REQUEST")
+                        .requestMatchers("/setVacancy", "/setVacancy/**").hasAuthority("SET_VACANCY_DAYS_NUMBER")
                 )
 
                 /*Change of the login page */

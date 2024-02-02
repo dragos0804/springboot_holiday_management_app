@@ -107,6 +107,10 @@ public class UserService implements UserDetailsService {
         return null;
     }
 
+    public UserEntity getUserById(Long id) {
+        return userRepository.findById(id).orElse(null);
+    }
+
     public List<UserEntity> getAllUsersUnderSameManager() {
         UserEntity manager = getCurrentUser();
         if(manager != null) {
@@ -114,4 +118,6 @@ public class UserService implements UserDetailsService {
         }
         return null;
     }
+
+
 }

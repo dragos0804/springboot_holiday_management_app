@@ -59,4 +59,8 @@ public class DaysOffService {
         return optDaysOffEntities.orElse(null);
     }
 
+    public void deleteById(DaysOffEntity daysOff) {
+        daysOffRepository.delete(daysOff);
+    }
+
 }
