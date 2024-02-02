@@ -28,10 +28,21 @@
             <button type="submit">Save Holiday</button>
 
         </form>
-        <!-- Error message display -->
-        <div th:if="${dateValidationError}">
-            <span th:text="${dateValidationError}" class="error-message" style="color: red;"></span>
-        </div>
+
+        <script>
+            // Check if dateValidationError query parameter is present in the URL
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('dateValidationError')) {
+                // Display JavaScript alert for invalid date
+                alert("Start date must be on or before end date!");
+            }
+            // Check if dateValidationError query parameter is present in the URL
+            var urlParams1 = new URLSearchParams(window.location.search);
+            if (urlParams1.has('tooManyDaysRequestedError')) {
+                // Display JavaScript alert for invalid date
+                alert("You have requested too many days!");
+            }
+        </script>
 
     </div>
 

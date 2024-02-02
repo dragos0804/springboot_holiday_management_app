@@ -3,6 +3,7 @@ package com.lab.model.controller;
 import com.lab.model.model.DaysOffEntity;
 import com.lab.model.model.UserEntity;
 import com.lab.model.repository.UserRepository;
+import com.lab.model.service.DateService;
 import com.lab.model.service.DaysOffService;
 import com.lab.model.service.UserService;
 import com.lab.model.util.Icon;
@@ -23,15 +24,17 @@ import java.util.List;
 public class UpdateController {
 
     UserRepository userRepository;
+    DateService dateService;
     Logger logger = LoggerFactory.getLogger(AdminController.class);
     private UserService userService;
     private DaysOffService daysOffService;
 
     @Autowired
-    public UpdateController(UserRepository userRepository, UserService userService, DaysOffService daysOffService) {
+    public UpdateController(UserRepository userRepository, UserService userService, DaysOffService daysOffService, DateService dateService) {
         this.userRepository = userRepository;
         this.userService = userService;
         this.daysOffService = daysOffService;
+        this.dateService = dateService;
     }
 
     @GetMapping()
@@ -116,7 +119,13 @@ public class UpdateController {
             if(isAcceptedBool)
             {
                 daysOffEntityLocal.setIsApproved(isAcceptedBool);
+                int businessDays = dateService.calculateBusinessDays(daysOffEntityLocal.getStartDate(), daysOffEntityLocal.getEndDate(), DaysOffService.nationalHolidays);
+                Long userId = -1L;
+                userId = daysOffService.getUserIdByDayOffId(daysOffEntityLocal.getId());
+                UserEntity userLocal = userService.findById(userId);
+                userLocal.setNrOfDaysOff(userLocal.getNrOfDaysOff() - businessDays);
                 daysOffService.update(daysOffEntityLocal);
+                userService.update(userLocal);
             }
             else
             {

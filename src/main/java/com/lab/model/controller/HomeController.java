@@ -1,7 +1,6 @@
 package com.lab.model.controller;
 
 import com.lab.model.model.DaysOffEntity;
-import com.lab.model.model.RoleEntity;
 import com.lab.model.model.UserEntity;
 import com.lab.model.repository.UserRepository;
 import com.lab.model.service.DaysOffService;
@@ -18,7 +17,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,19 +96,22 @@ public class HomeController {
     public String updateDaysOff(Model model, @ModelAttribute("daysOff") DaysOffEntity daysOff) {
         logger.info("update daysOff called");
 
-        if (!daysOffValidatorService.isValid(daysOff)) {
-            model.addAttribute("dateValidationError", "Start date must be on or before end date.");
-            model.addAttribute("daysOff", daysOff); // Add this line to return the form with user data
-            return "/home"; // Redirect back to the form with an error message
+        if (!daysOffValidatorService.isValidStartDateNotGraterThanEndDate(daysOff)) {
+            // Display JavaScript alert for invalid date
+            return "redirect:/home?dateValidationError=true";
         }
 
         UserEntity user = userService.getCurrentUser();
         daysOff.setUser(user);
         daysOff.setIsApproved(false);
 
+        if(user.getNrOfDaysOff() - daysOffValidatorService.isValidNumberOfDays(daysOff) < 0)
+            return "redirect:/home?tooManyDaysRequestedError=true";
+
         daysOffService.update(daysOff);
 
         return "redirect:/home"; // Redirect after successful update
     }
+
 
 }

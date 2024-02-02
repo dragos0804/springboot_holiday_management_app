@@ -1,8 +1,9 @@
 package com.lab.model.service;
 
 import com.lab.model.model.DaysOffEntity;
+import com.lab.model.repository.DaysOffRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.validation.Validator;
 
 
 import java.time.LocalDate;
@@ -16,7 +17,12 @@ public class DaysOffValidatorService {
      * @param daysOff The DaysOffEntity object to validate.
      * @return true if the start date is on or before the end date, false otherwise.
      */
-    public boolean isValid(DaysOffEntity daysOff) {
+    private DateService dateService;
+    @Autowired
+    public DaysOffValidatorService(DateService dateService){
+        this.dateService = dateService;
+    }
+    public boolean isValidStartDateNotGraterThanEndDate(DaysOffEntity daysOff) {
         LocalDate startDate = daysOff.getStartDate();
         LocalDate endDate = daysOff.getEndDate();
 
@@ -26,5 +32,8 @@ public class DaysOffValidatorService {
         }
 
         return !startDate.isAfter(endDate);
+    }
+    public int isValidNumberOfDays(DaysOffEntity daysOff) {
+        return dateService.calculateBusinessDays(daysOff.getStartDate(), daysOff.getEndDate(), DaysOffService.nationalHolidays);
     }
 }
