@@ -20006,3 +20006,241 @@ org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property o
 2024-02-02T15:12:05.610+02:00  WARN 8588 --- [http-nio-8080-exec-4] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-4][setVacancy] Deprecated unwrapped fragment expression "fragments/componenets::top-bar('Vacancy')" found in template setVacancy, line 13, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::top-bar('Vacancy')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
 2024-02-02T15:12:05.610+02:00  WARN 8588 --- [http-nio-8080-exec-4] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-4][setVacancy] Deprecated unwrapped fragment expression "fragments/componenets::side-menu(menuItems=${menuItems})" found in template setVacancy, line 14, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::side-menu(menuItems=${menuItems})}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
 2024-02-02T15:12:05.612+02:00 DEBUG 8588 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:33:48.663+02:00  WARN 6896 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-02T17:33:48.808+02:00 DEBUG 6896 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2024-02-02T17:33:48.888+02:00 DEBUG 6896 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-02-02T17:33:48.993+02:00 DEBUG 6896 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-02-02T17:33:49.029+02:00 DEBUG 6896 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-02-02T17:33:58.185+02:00  INFO 6896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-02-02T17:33:58.185+02:00 DEBUG 6896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-02-02T17:33:58.185+02:00 DEBUG 6896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-02-02T17:33:58.185+02:00 DEBUG 6896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-02-02T17:33:58.186+02:00 DEBUG 6896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3b171fbd
+2024-02-02T17:33:58.187+02:00 DEBUG 6896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4def900a
+2024-02-02T17:33:58.187+02:00 DEBUG 6896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-02-02T17:33:58.187+02:00  INFO 6896 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-02-02T17:33:58.198+02:00  WARN 6896 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2024-02-02T17:33:58.208+02:00  WARN 6896 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2024-02-02T17:33:58.258+02:00 DEBUG 6896 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2024-02-02T17:33:58.260+02:00 DEBUG 6896 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.LoginController#open()
+2024-02-02T17:33:58.274+02:00 DEBUG 6896 --- [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:33:58.520+02:00 DEBUG 6896 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:33:58.863+02:00 DEBUG 6896 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2024-02-02T17:33:58.864+02:00 DEBUG 6896 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.LoginController#open()
+2024-02-02T17:33:58.865+02:00 DEBUG 6896 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:33:58.866+02:00 DEBUG 6896 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:33:59.293+02:00 DEBUG 6896 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2024-02-02T17:33:59.294+02:00 DEBUG 6896 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.LoginController#open()
+2024-02-02T17:33:59.295+02:00 DEBUG 6896 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2024-02-02T17:33:59.297+02:00 DEBUG 6896 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:34:10.440+02:00 DEBUG 6896 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/home", parameters={}
+2024-02-02T17:34:10.441+02:00 DEBUG 6896 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.HomeController#open(Model, Authentication)
+2024-02-02T17:34:10.467+02:00 DEBUG 6896 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:34:10.492+02:00  WARN 6896 --- [http-nio-8080-exec-8] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-8][home] Deprecated unwrapped fragment expression "fragments/componenets::top-bar('Home')" found in template home, line 13, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::top-bar('Home')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:34:10.522+02:00  WARN 6896 --- [http-nio-8080-exec-8] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-8][home] Deprecated unwrapped fragment expression "fragments/componenets::side-menu(menuItems=${menuItems})" found in template home, line 14, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::side-menu(menuItems=${menuItems})}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:34:10.545+02:00 DEBUG 6896 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:34:24.266+02:00 DEBUG 6896 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2024-02-02T17:34:24.266+02:00 DEBUG 6896 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.LoginController#open()
+2024-02-02T17:34:24.267+02:00 DEBUG 6896 --- [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:34:24.269+02:00 DEBUG 6896 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:34:24.416+02:00 DEBUG 6896 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2024-02-02T17:34:24.417+02:00 DEBUG 6896 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.LoginController#open()
+2024-02-02T17:34:24.417+02:00 DEBUG 6896 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2024-02-02T17:34:24.419+02:00 DEBUG 6896 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:34:27.793+02:00 DEBUG 6896 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/home", parameters={}
+2024-02-02T17:34:27.793+02:00 DEBUG 6896 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.HomeController#open(Model, Authentication)
+2024-02-02T17:34:27.804+02:00 DEBUG 6896 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:34:27.805+02:00  WARN 6896 --- [http-nio-8080-exec-4] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-4][home] Deprecated unwrapped fragment expression "fragments/componenets::top-bar('Home')" found in template home, line 13, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::top-bar('Home')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:34:27.805+02:00  WARN 6896 --- [http-nio-8080-exec-4] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-4][home] Deprecated unwrapped fragment expression "fragments/componenets::side-menu(menuItems=${menuItems})" found in template home, line 14, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::side-menu(menuItems=${menuItems})}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:34:27.809+02:00 DEBUG 6896 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:34:29.683+02:00 DEBUG 6896 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/setVacancy", parameters={}
+2024-02-02T17:34:29.684+02:00 DEBUG 6896 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.SetVacancyDaysController#open(Model, Authentication)
+2024-02-02T17:34:29.693+02:00 DEBUG 6896 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:34:29.696+02:00  WARN 6896 --- [http-nio-8080-exec-8] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-8][setVacancy] Deprecated unwrapped fragment expression "fragments/componenets::top-bar('Vacancy')" found in template setVacancy, line 13, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::top-bar('Vacancy')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:34:29.698+02:00  WARN 6896 --- [http-nio-8080-exec-8] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-8][setVacancy] Deprecated unwrapped fragment expression "fragments/componenets::side-menu(menuItems=${menuItems})" found in template setVacancy, line 14, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::side-menu(menuItems=${menuItems})}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:34:29.704+02:00 DEBUG 6896 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:34:32.366+02:00 DEBUG 6896 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/approve", parameters={}
+2024-02-02T17:34:32.366+02:00 DEBUG 6896 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.UpdateController#open(Model, Authentication)
+2024-02-02T17:34:32.380+02:00 DEBUG 6896 --- [http-nio-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:34:32.382+02:00  WARN 6896 --- [http-nio-8080-exec-10] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-10][approve] Deprecated unwrapped fragment expression "fragments/componenets::top-bar('Approve')" found in template approve, line 13, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::top-bar('Approve')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:34:32.385+02:00  WARN 6896 --- [http-nio-8080-exec-10] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-10][approve] Deprecated unwrapped fragment expression "fragments/componenets::side-menu(menuItems=${menuItems})" found in template approve, line 14, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::side-menu(menuItems=${menuItems})}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:34:32.389+02:00 DEBUG 6896 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:34:35.055+02:00 DEBUG 6896 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/approve", parameters={masked}
+2024-02-02T17:34:35.056+02:00 DEBUG 6896 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.UpdateController#acceptEmployeeHoliday(Model, DaysOffEntity, String, String)
+2024-02-02T17:34:35.083+02:00 DEBUG 6896 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Failed to complete request: java.lang.NullPointerException: Cannot invoke "com.lab.model.service.DateService.calculateBusinessDays(java.time.LocalDate, java.time.LocalDate, java.util.List)" because "this.dateService" is null
+2024-02-02T17:34:35.085+02:00 ERROR 6896 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "com.lab.model.service.DateService.calculateBusinessDays(java.time.LocalDate, java.time.LocalDate, java.util.List)" because "this.dateService" is null] with root cause
+
+java.lang.NullPointerException: Cannot invoke "com.lab.model.service.DateService.calculateBusinessDays(java.time.LocalDate, java.time.LocalDate, java.util.List)" because "this.dateService" is null
+	at com.lab.model.controller.UpdateController.acceptEmployeeHoliday(UpdateController.java:121) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:254) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:182) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:917) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:829) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.1.jar:6.1.1]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.16.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:131) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.2.0.jar:6.2.0]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:91) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.1.jar:6.1.1]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:340) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.16.jar:10.1.16]
+	at java.base/java.lang.Thread.run(Thread.java:1589) ~[na:na]
+
+2024-02-02T17:35:37.551+02:00  WARN 18816 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-02-02T17:35:37.682+02:00 DEBUG 18816 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 14 mappings in 'requestMappingHandlerMapping'
+2024-02-02T17:35:37.761+02:00 DEBUG 18816 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-02-02T17:35:37.864+02:00 DEBUG 18816 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-02-02T17:35:37.891+02:00 DEBUG 18816 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-02-02T17:35:49.991+02:00  INFO 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-02-02T17:35:49.991+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-02-02T17:35:49.992+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-02-02T17:35:49.992+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-02-02T17:35:49.993+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7202009e
+2024-02-02T17:35:49.993+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@76ffd052
+2024-02-02T17:35:49.994+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-02-02T17:35:49.994+02:00  INFO 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-02-02T17:35:50.006+02:00  WARN 18816 --- [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/login' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2024-02-02T17:35:50.019+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2024-02-02T17:35:50.020+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.LoginController#open()
+2024-02-02T17:35:50.045+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:35:50.247+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:35:50.770+02:00 DEBUG 18816 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2024-02-02T17:35:50.770+02:00 DEBUG 18816 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.LoginController#open()
+2024-02-02T17:35:50.771+02:00 DEBUG 18816 --- [http-nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:35:50.773+02:00 DEBUG 18816 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:35:51.130+02:00  WARN 18816 --- [http-nio-8080-exec-3] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/favicon.ico' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2024-02-02T17:35:51.140+02:00 DEBUG 18816 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2024-02-02T17:35:51.140+02:00 DEBUG 18816 --- [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.LoginController#open()
+2024-02-02T17:35:51.142+02:00 DEBUG 18816 --- [http-nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2024-02-02T17:35:51.143+02:00 DEBUG 18816 --- [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:35:54.648+02:00 DEBUG 18816 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/home", parameters={}
+2024-02-02T17:35:54.648+02:00 DEBUG 18816 --- [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.HomeController#open(Model, Authentication)
+2024-02-02T17:35:54.673+02:00 DEBUG 18816 --- [http-nio-8080-exec-6] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:35:54.679+02:00  WARN 18816 --- [http-nio-8080-exec-6] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-6][home] Deprecated unwrapped fragment expression "fragments/componenets::top-bar('Home')" found in template home, line 13, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::top-bar('Home')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:35:54.709+02:00  WARN 18816 --- [http-nio-8080-exec-6] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-6][home] Deprecated unwrapped fragment expression "fragments/componenets::side-menu(menuItems=${menuItems})" found in template home, line 14, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::side-menu(menuItems=${menuItems})}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:35:54.736+02:00 DEBUG 18816 --- [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:35:57.090+02:00 DEBUG 18816 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/approve", parameters={}
+2024-02-02T17:35:57.090+02:00 DEBUG 18816 --- [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.UpdateController#open(Model, Authentication)
+2024-02-02T17:35:57.100+02:00 DEBUG 18816 --- [http-nio-8080-exec-8] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:35:57.103+02:00  WARN 18816 --- [http-nio-8080-exec-8] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-8][approve] Deprecated unwrapped fragment expression "fragments/componenets::top-bar('Approve')" found in template approve, line 13, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::top-bar('Approve')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:35:57.105+02:00  WARN 18816 --- [http-nio-8080-exec-8] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-8][approve] Deprecated unwrapped fragment expression "fragments/componenets::side-menu(menuItems=${menuItems})" found in template approve, line 14, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::side-menu(menuItems=${menuItems})}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:35:57.110+02:00 DEBUG 18816 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:35:59.152+02:00 DEBUG 18816 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/approve", parameters={masked}
+2024-02-02T17:35:59.152+02:00 DEBUG 18816 --- [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.UpdateController#acceptEmployeeHoliday(Model, DaysOffEntity, String, String)
+2024-02-02T17:35:59.222+02:00 DEBUG 18816 --- [http-nio-8080-exec-10] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2024-02-02T17:35:59.225+02:00 DEBUG 18816 --- [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2024-02-02T17:35:59.229+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/approve", parameters={}
+2024-02-02T17:35:59.229+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.UpdateController#open(Model, Authentication)
+2024-02-02T17:35:59.238+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:35:59.239+02:00  WARN 18816 --- [http-nio-8080-exec-1] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-1][approve] Deprecated unwrapped fragment expression "fragments/componenets::top-bar('Approve')" found in template approve, line 13, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::top-bar('Approve')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:35:59.239+02:00  WARN 18816 --- [http-nio-8080-exec-1] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-1][approve] Deprecated unwrapped fragment expression "fragments/componenets::side-menu(menuItems=${menuItems})" found in template approve, line 14, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::side-menu(menuItems=${menuItems})}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:35:59.242+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:36:01.104+02:00 DEBUG 18816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/home", parameters={}
+2024-02-02T17:36:01.106+02:00 DEBUG 18816 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.HomeController#open(Model, Authentication)
+2024-02-02T17:36:01.118+02:00 DEBUG 18816 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:36:01.119+02:00  WARN 18816 --- [http-nio-8080-exec-3] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-3][home] Deprecated unwrapped fragment expression "fragments/componenets::top-bar('Home')" found in template home, line 13, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::top-bar('Home')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:36:01.119+02:00  WARN 18816 --- [http-nio-8080-exec-3] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-3][home] Deprecated unwrapped fragment expression "fragments/componenets::side-menu(menuItems=${menuItems})" found in template home, line 14, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::side-menu(menuItems=${menuItems})}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:36:01.122+02:00 DEBUG 18816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:36:02.198+02:00 DEBUG 18816 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/setVacancy", parameters={}
+2024-02-02T17:36:02.199+02:00 DEBUG 18816 --- [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.SetVacancyDaysController#open(Model, Authentication)
+2024-02-02T17:36:02.208+02:00 DEBUG 18816 --- [http-nio-8080-exec-5] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:36:02.210+02:00  WARN 18816 --- [http-nio-8080-exec-5] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-5][setVacancy] Deprecated unwrapped fragment expression "fragments/componenets::top-bar('Vacancy')" found in template setVacancy, line 13, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::top-bar('Vacancy')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:36:02.212+02:00  WARN 18816 --- [http-nio-8080-exec-5] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-5][setVacancy] Deprecated unwrapped fragment expression "fragments/componenets::side-menu(menuItems=${menuItems})" found in template setVacancy, line 14, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::side-menu(menuItems=${menuItems})}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:36:02.218+02:00 DEBUG 18816 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:36:16.039+02:00 DEBUG 18816 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2024-02-02T17:36:16.039+02:00 DEBUG 18816 --- [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.LoginController#open()
+2024-02-02T17:36:16.040+02:00 DEBUG 18816 --- [http-nio-8080-exec-9] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:36:16.041+02:00 DEBUG 18816 --- [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:36:16.146+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2024-02-02T17:36:16.146+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.LoginController#open()
+2024-02-02T17:36:16.147+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [image/avif, image/webp, image/apng, image/svg+xml, image/*, */*;q=0.8]
+2024-02-02T17:36:16.149+02:00 DEBUG 18816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-02-02T17:36:22.090+02:00 DEBUG 18816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/home", parameters={}
+2024-02-02T17:36:22.091+02:00 DEBUG 18816 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.lab.model.controller.HomeController#open(Model, Authentication)
+2024-02-02T17:36:22.099+02:00 DEBUG 18816 --- [http-nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected 'text/html' given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, */*;q=0.8, application/signed-exchange;v=b3;q=0.7]
+2024-02-02T17:36:22.099+02:00  WARN 18816 --- [http-nio-8080-exec-3] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-3][home] Deprecated unwrapped fragment expression "fragments/componenets::top-bar('Home')" found in template home, line 13, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::top-bar('Home')}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:36:22.100+02:00  WARN 18816 --- [http-nio-8080-exec-3] actStandardFragmentInsertionTagProcessor : [THYMELEAF][http-nio-8080-exec-3][home] Deprecated unwrapped fragment expression "fragments/componenets::side-menu(menuItems=${menuItems})" found in template home, line 14, col 6. Please use the complete syntax of fragment expressions instead ("~{fragments/componenets::side-menu(menuItems=${menuItems})}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2024-02-02T17:36:22.104+02:00 DEBUG 18816 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
