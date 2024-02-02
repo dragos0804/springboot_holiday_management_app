@@ -95,9 +95,23 @@ public class UpdateController {
             daysOffEntityLocal = daysOffService.findById(daysOffId);
 
         boolean isAcceptedBool = isAccepted.equals("accept");
+
+        if(isAcceptedBool)
+            logger.info("Accepted");
+        else
+            logger.info("Declined");
+
         if(daysOffEntityLocal != null) {
-            daysOffEntityLocal.setIsApproved(isAcceptedBool);
-            daysOffService.update(daysOffEntityLocal);
+
+            if(isAcceptedBool)
+            {
+                daysOffEntityLocal.setIsApproved(isAcceptedBool);
+                daysOffService.update(daysOffEntityLocal);
+            }
+            else
+            {
+                daysOffService.delete(daysOffEntityLocal);
+            }
         }
 
         return "redirect:/approve";
