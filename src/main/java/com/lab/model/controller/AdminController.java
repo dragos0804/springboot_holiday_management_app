@@ -58,7 +58,7 @@ public class AdminController {
         menu.add(roles);
 
         MenuItem changeBoss = new MenuItem();
-        changeBoss.setName("Change Boss");
+        changeBoss.setName("Management");
         changeBoss.setUrl("/admin/change-boss");
         Icon rolesIcon2 = Icon.ROLE;
         rolesIcon2.setColor(Icon.IconColor.INDIGO);
@@ -95,7 +95,7 @@ public class AdminController {
         menu.add(roles);
 
         MenuItem changeBoss = new MenuItem();
-        changeBoss.setName("Change Boss");
+        changeBoss.setName("Management");
         Icon rolesIconForChangeBoss = Icon.ROLE;
         rolesIconForChangeBoss.setColor(Icon.IconColor.INDIGO);
 
